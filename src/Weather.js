@@ -33,15 +33,25 @@ let form = (
     <button type="submit">Enter</button>
   </form>
 );
+let a = (
+  <a
+    href="https://github.com/OlenaLupiy/weather-react"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Visit my GitHub
+  </a>
+);
 if(loaded){
     return (
       <div>
-        {form} 
+        {form}
+        {a}
         <Audio
           height="80"
           width="80"
           radius="9"
-          color="orange"
+          color="red"
           ariaLabel="loading"
           wrapperStyle
           wrapperClass
@@ -55,11 +65,14 @@ if(loaded){
             <img src={weather.icon} alt={weather.description} />
           </li>
         </ul>
-       
+        
       </div>
     );
 } else{
-    return form;
+    return( 
+        <div>{form}
+        {a}
+    </div>)
 }
     
 }
